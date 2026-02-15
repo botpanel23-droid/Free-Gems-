@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamond Reward Event</title>
+<style>
+body{
+    background:#0f0f1a;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+}
+h1{
+    color:#00ffcc;
+}
+button{
+    width:90%;
+    padding:15px;
+    margin:8px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(45deg,#ff0055,#ff8800);
+    color:white;
+}
+button:hover{
+    opacity:0.8;
+}
+#finalBtn{
+    display:none;
+    background:linear-gradient(45deg,#00ffcc,#0099ff);
+}
+</style>
+</head>
+<body>
+
+<h1>🎮 Diamond Reward Event</h1>
+<p>Complete all steps to unlock reward</p>
+
+<div id="steps"></div>
+
+<button id="finalBtn" onclick="alert('Reward Unlocked!')">
+🔥 Claim Reward
+</button>
+
+<script>
+let completed = 0;
+let totalSteps = 10;
+let container = document.getElementById("steps");
+
+for(let i=1;i<=totalSteps;i++){
+    let btn = document.createElement("button");
+    btn.innerHTML = "Step " + i + " - Verify";
+    btn.onclick = function(){
+        window.open("https://otieu.com/4/10478226","_blank");
+        btn.disabled = true;
+        btn.innerHTML = "Completed ✔";
+        completed++;
+        if(completed === totalSteps){
+            document.getElementById("finalBtn").style.display="block";
+        }
+    }
+    container.appendChild(btn);
+}
+</script>
+
+</body>
+</html>
